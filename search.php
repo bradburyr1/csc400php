@@ -68,13 +68,16 @@ if (count($result) > 0) {
 		 while($row = mysqli_fetch_assoc($result)){
         // temp user array
         $marker = array();
+		$marker['gameid'] = $row['game_id'];
 		$marker['latitude'] = $row['latitude'];
-		//echo "hello";
-		//echo $marker["latitude"];
 		$marker["longitude"] = $row["longitude"];
 		$marker["title"] = $row["title"];
 		$marker["city"] = $row["address"];
+		$marker['time'] = $row['time'];
+		$marker['date'] = $row['date'];
 		$marker["comp_level"] = $row["comp_level"];
+		$marker['postalAddress'] = $row['postalAddress'];
+		$marker['user_id'] = $row['user_id'];
 		
 		// push single marker into final response array
         array_push($response['markers'], $marker);
@@ -89,5 +92,5 @@ if (count($result) > 0) {
     $response["message"] = "No markers found";
  
     echo json_encode($response);
-}
+}//https://csc-182021.appspot.com/?sport=any&city=any&comp=true&fun=false
 ?>

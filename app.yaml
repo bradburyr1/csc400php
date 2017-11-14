@@ -1,0 +1,22 @@
+runtime: php55
+api_version: 1
+
+runtime_config:
+    document_root: android_connect
+
+handlers:
+
+- url: .*/create_game/.*
+  script: create_game.php
+  
+- url: /
+  script: search.php
+  
+- url: .*/db_config/.*
+  script: db_config.php
+  
+- url: .*/db_connect/.*
+  script: db_connect.php
+  
+- url: .*/test/.*
+  script: test.php

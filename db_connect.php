@@ -2,11 +2,20 @@
  
 //This file connects to the database
  
-class DB_CONNECT {
+ //For connecting locally:
+/* class DB_CONNECT {
  public $servername = "localhost";
 	public $username = "root";
 	public $password = "";
 	public $dbname = "location_database";
+	public $conn = ""; */
+	
+//For connecting to DB on Google Cloud Platform: 
+class DB_CONNECT {
+ public $servername = "104.197.153.182";
+	public $username = "root";
+	public $password = "";
+	public $dbname = "csc400db";
 	public $conn = "";
 	
     function __construct() {
@@ -31,7 +40,7 @@ class DB_CONNECT {
         $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
 	// Check connection
 	if ($this->conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
+		die("(Hello from your own PHP!) Connection failed: " . $conn->connect_error);
 	}
  
         // return connection cursor
