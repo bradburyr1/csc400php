@@ -20,3 +20,9 @@ handlers:
   
 - url: .*/test/.*
   script: test.php
+  
+ - url: .*/sign_up/.*
+  script: sign_up.php
+  
+ - url: .*/delete/.*
+  script: delete.php

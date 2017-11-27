@@ -3,20 +3,20 @@
 //This file connects to the database
  
  //For connecting locally:
-/* class DB_CONNECT {
+class DB_CONNECT {
  public $servername = "localhost";
 	public $username = "root";
 	public $password = "";
 	public $dbname = "location_database";
-	public $conn = ""; */
+	public $conn = "";
 	
 //For connecting to DB on Google Cloud Platform: 
-class DB_CONNECT {
+/*class DB_CONNECT {
  public $servername = "104.197.153.182";
 	public $username = "root";
 	public $password = "";
 	public $dbname = "csc400db";
-	public $conn = "";
+	public $conn = "";*/
 	
     function __construct() {
         // connect to database
