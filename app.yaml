@@ -21,8 +21,14 @@ handlers:
 - url: .*/test/.*
   script: test.php
   
- - url: .*/sign_up/.*
+- url: .*/sign_up/.*
   script: sign_up.php
   
- - url: .*/delete/.*
+- url: .*/delete/.*
   script: delete.php
+  
+- url: .*/owned/.*
+  script: owned.php
+  
+- url: .*/login_check/.*
+  script: login_check.php

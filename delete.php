@@ -8,8 +8,6 @@ require_once __DIR__ . '/db_connect.php';
 $db = new db_connect();
 $gid = $_GET["gid"];
 
-#$sql = "INSERT INTO `attendees_$gid`(`user_id`, `role`) VALUES ('$uname', '$role')";
-
 $sql = "DROP TABLE attendees_$gid";
 
 if ($db->conn->query($sql) === TRUE) {
