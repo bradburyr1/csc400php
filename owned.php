@@ -33,6 +33,10 @@ if (count($result) > 0) {
 		$marker["comp_level"] = $row["comp_level"];
 		$marker['postalAddress'] = $row['postalAddress'];
 		$marker['user_id'] = $row['user_id'];
+		$marker['curr_signed'] = $row['curr_signed'];
+		$marker['curr_refs'] = $row['curr_refs'];
+		$marker['max_signed'] = $row['max_signed'];
+		$marker['max_refs'] = $row['max_refs'];
 		
 		// push single marker into final response array
         array_push($response['markers'], $marker);
