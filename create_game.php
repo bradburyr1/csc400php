@@ -21,8 +21,8 @@ $refs = $_GET["refs"];
 $gid = rand(0, 1000000);//Create a random number for use as the game's ID. This is obviously a temporary solution, with the potential for conflicts. 
 
 //gcp:
-$sql = "INSERT INTO `csc400db`.`markers` (`game_id`, `latitude`, `longitude`, `title`, `address`, `time`, `date`, `comp_level`, `postalAddress`, `user_id`, 'max_signed', 'max_refs') 
-VALUES ('$gid', '$lat', '$long', '$sport', '$city', '$time', '$date', '$comp', '$postalAddress', '$uid', '$players', $refs');";
+$sql = "INSERT INTO `csc400db`.`markers` (`game_id`, `latitude`, `longitude`, `title`, `address`, `time`, `date`, `comp_level`, `postalAddress`, `user_id`, `curr_signed`, `curr_refs`, `max_signed`, `max_refs`) 
+VALUES ('$gid', '$lat', '$long', '$sport', '$city', '$time', '$date', '$comp', '$postalAddress', '$uid', '0', '0', '$players', '$refs');";
 
 //local:
 /* $sql = "INSERT INTO `location_database`.`markers` (`game_id`, `latitude`, `longitude`, `title`, `address`, `time`, `date`, `comp_level`, `postalAddress`, `user_id`, `max_signed`, `max_refs`)

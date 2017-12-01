@@ -46,10 +46,10 @@ if($comp == 'true' && $fun != 'true'){
 //echo $fun;
 if($fun == 'true' && $comp != 'true'){
 	if($first == true){
-		$sql .= " WHERE comp_level = 'Just For Fun'";
+		$sql .= " WHERE comp_level = 'Just For Fun' OR comp_level = 'Fun'";
 	}
 	else if($first == false){
-		$sql .= " AND comp_level = 'Just For Fun'";
+		$sql .= " AND comp_level = 'Just For Fun' OR comp_level = 'Fun'";
 	}
 }
 //echo "line 55: ".$sql;
