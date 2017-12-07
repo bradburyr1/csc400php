@@ -32,3 +32,9 @@ handlers:
   
 - url: .*/login_check/.*
   script: login_check.php
+  
+- url: .*/leavegame/.*
+  script: leavegame.php
+  
+- url: .*/attendees/.*
+  script: attendees.php
