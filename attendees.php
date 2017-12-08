@@ -23,7 +23,8 @@ if (count($result) > 0) {
 	while($row = mysqli_fetch_assoc($result)){
         // temp user array
         $marker = array();
-		$marker['gameid'] = $row['user_id'];
+		$marker['user_id'] = $row['user_id'];
+		$marker['role'] = $row['role'];
 		
 		// push single marker into final response array
         array_push($response['markers'], $marker);
