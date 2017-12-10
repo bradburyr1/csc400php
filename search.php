@@ -10,13 +10,14 @@ $sport = $_GET["sport"];
 $city = $_GET["city"];
 $comp = $_GET["comp"];
 $fun = $_GET["fun"];
+$uid = $_GET["uid"];
 /* echo $sport;
 echo $city;
 echo $comp;*/
 
 $first = true;//for proper sql syntax
 
-$sql = "SELECT * FROM markers";
+$sql = "SELECT l.* FROM `csc400db`.`markers` l";
 //echo $sql;
 
 if($sport != 'any'){
@@ -27,6 +28,7 @@ if($sport != 'any'){
 if($city != 'any'){
 	if($first == true){
 		$sql .= " WHERE address = '$city'";
+		$first = false;
 	}
 	else if($first == false){
 		$sql .= " AND address = '$city'";
@@ -37,6 +39,7 @@ if($city != 'any'){
 if($comp == 'true' && $fun != 'true'){
 	if($first == true){
 		$sql .= " WHERE comp_level = 'Competitive'";
+		$first = false;
 	}
 	else if($first == false){
 		$sql .= " AND comp_level = 'Competitive'";
@@ -47,11 +50,20 @@ if($comp == 'true' && $fun != 'true'){
 if($fun == 'true' && $comp != 'true'){
 	if($first == true){
 		$sql .= " WHERE comp_level = 'Just For Fun' OR comp_level = 'Fun'";
+		$first = false;
 	}
 	else if($first == false){
 		$sql .= " AND comp_level = 'Just For Fun' OR comp_level = 'Fun'";
 	}
 }
+
+if($first == true){
+		$sql .= " WHERE l.game_id NOT IN (SELECT game_id FROM gamelist_$uid r)";
+	}
+	else if($first == false){
+		$sql .= " AND l.game_id NOT IN (SELECT game_id FROM $uid r)";
+	}
+
 //echo "line 55: ".$sql;
 
 //Get all markers
