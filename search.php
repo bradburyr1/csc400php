@@ -61,7 +61,7 @@ if($first == true){
 		$sql .= " WHERE l.game_id NOT IN (SELECT game_id FROM gamelist_$uid r)";
 	}
 	else if($first == false){
-		$sql .= " AND l.game_id NOT IN (SELECT game_id FROM $uid r)";
+		$sql .= " AND l.game_id NOT IN (SELECT game_id FROM gamelist_$uid r)";
 	}
 
 //echo "line 55: ".$sql;
