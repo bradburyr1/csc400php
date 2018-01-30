@@ -1,4 +1,4 @@
-<?php
+<?php//This signs a user up for games
 $response = array();
 
 // include db connect class

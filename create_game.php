@@ -1,4 +1,4 @@
-<?php
+<?php//This creates games by adding them into the database and giving them attendee tables 
 $response = array();
 
 // include db connect class
@@ -18,7 +18,8 @@ $uid = $_GET["uid"];
 $players = $_GET["players"];
 $refs = $_GET["refs"];
 
-$gid = rand(0, 1000000);//Create a random number for use as the game's ID. This is obviously a temporary solution, with the potential for conflicts. 
+$gid = rand(0, 1000000);//Create a random number for use as the game's ID. If this app were to go on the app store I 
+//would need to add a bit more to prevent conflicts. 
 
 //gcp:
 $sql = "INSERT INTO `csc400db`.`markers` (`game_id`, `latitude`, `longitude`, `title`, `address`, `time`, `date`, `comp_level`, `postalAddress`, `user_id`, `curr_signed`, `curr_refs`, `max_signed`, `max_refs`) 

@@ -1,4 +1,4 @@
-<?php
+<?php//This is not used by the app but for debugging purposes to delete games
 $response = array();
 
 // include db connect class

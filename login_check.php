@@ -1,4 +1,4 @@
-<?php
+<?php//If the user is not in the system, add them in, and if they are, return the games they are signed up for. 
 $response = array();
 
 // include db connect class

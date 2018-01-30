@@ -1,4 +1,4 @@
-<?php
+<?php//This gets the games that the user has made
 $response = array();
 
 // include db connect class
