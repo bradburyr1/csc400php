@@ -96,3 +96,4 @@ if (count($result) > 0) {
     echo json_encode($response);
 }
 }
+?>
