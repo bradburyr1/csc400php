@@ -1,4 +1,5 @@
-<?php//Allows the user to leave games 
+<?php
+//Allows the user to leave games 
 $response = array();
 
 // include db connect class

@@ -1,4 +1,5 @@
-<?php//This creates games by adding them into the database and giving them attendee tables 
+<?php
+//This creates games by adding them into the database and giving them attendee tables 
 $response = array();
 
 // include db connect class

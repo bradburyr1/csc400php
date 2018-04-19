@@ -1,4 +1,5 @@
-<?php//Return the attendees of a game 
+<?php
+//Return the attendees of a game 
 $response = array();
 
 // include db connect class

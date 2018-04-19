@@ -1,4 +1,5 @@
-<?php//search the database based on the user's search criteria. 
+<?php
+//search the database based on the user's search criteria. 
 $response = array();
 
 // include db connect class
