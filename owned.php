@@ -1,22 +1,29 @@
 <?php
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 	
+?>
+
+<?php
 //This gets the games that the user has made
 $response = array();
+ini_set("allow_url_fopen", 1);
 
 // include db connect class
 require_once __DIR__ . '/db_connect.php';
 
+//var_dump($_SESSION);
 // connect to db
 $db = new db_connect();
-$uid = $_GET["user_id"];
-/* echo $sport;
-echo $city;
-echo $comp;*/
+$uid = $_SESSION["userID"];
+//$uid = $_GET["uid"];;
 
 $first = true;//for proper sql syntax
-
-$sql = "SELECT * FROM markers WHERE user_id = '$uid'";
-
-$result = $db->conn->query($sql);
+$sql = $db->conn->prepare("SELECT * FROM markers WHERE user_id = ?");
+$sql->bind_param('s', $uid);
+$sql->execute();
+$result = $sql->get_result();
 
 if (count($result) > 0) {
     $response['markers'] = array();
@@ -47,7 +54,8 @@ if (count($result) > 0) {
  
     // echoing JSON response
     echo json_encode($response);
-} else {
+} 
+else {
     $response["success"] = 0;
     $response["message"] = "No markers found";
  

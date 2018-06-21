@@ -3,12 +3,14 @@
 //This file connects to the database
  
  //For connecting locally:
+ 
  /*class DB_CONNECT {
  public $servername = "localhost";
 	public $username = "root";
 	public $password = "";
 	public $dbname = "location_database";
 	public $conn = "";*/
+	
 	
 //For connecting to DB on Google Cloud Platform: 
 class DB_CONNECT {

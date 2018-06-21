@@ -1,38 +1,28 @@
 <?php
-//This is not used by the app but for debugging purposes to delete games
-$response = array();
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 
-// include db connect class
-require_once __DIR__ . '/db_connect.php';
+<?php
 
-// connect to db
-$db = new db_connect();
-$gid = $_GET["gid"];
+//var_dump($_SESSION);
+// remove all session variables
+session_unset(); 
 
-$sql = "DROP TABLE attendees_$gid";
+// destroy the session 
+session_destroy(); 
 
-if ($db->conn->query($sql) === TRUE) {
-	echo "<br/>"; // new line
-    echo "Deletion successful";
-	}
-else {
-	echo "<br/>"; // new line 
-    echo "Error accessing database: " . $db->conn->error;
-	}
+//var_dump($_SESSION);
 
-$sql = "";
-#Localhost
-#$sql = "DELETE FROM `location_database`.`markers` WHERE CONCAT(`markers`.`game_id`) = $gid";
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
+}
 
-#GCP
-$sql = "DELETE FROM `csc400db`.`markers` WHERE CONCAT(`markers`.`game_id`) = $gid";
-
-if ($db->conn->query($sql) === TRUE) {
-	echo "<br/>"; // new line
-    echo "Deletion successful";
-	}
-else {
-	echo "<br/>"; // new line 
-    echo "Error accessing database: " . $db->conn->error;
-	}
-	
+echo "Signed out.";
+?>

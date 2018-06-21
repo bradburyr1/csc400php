@@ -15,6 +15,9 @@ handlers:
 - url: .*/db_config/.*
   script: db_config.php
   
+- url: .*/checker_class/.*
+  script: checker_class.php
+  
 - url: .*/db_connect/.*
   script: db_connect.php
   
